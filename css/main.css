@@ -1,0 +1,329 @@
+body,html{
+	font-family: 'URW Palladio L',serif;
+	font-weight: 400;
+	color: #5e5e5e;
+	background-color: #FFF;
+	min-width: 320px;
+	height: 100%;
+    display: flex;
+    flex-direction:  column;
+    
+
+}
+#content {
+    width: 100%;
+    margin: 0 auto;
+    flex: 1 0 auto;
+}
+img{
+	max-width:100%; 
+	height: auto;
+}
+footer{
+    flex: 0 0 auto;
+    width: 100%;
+    height: 40px;
+
+}
+
+}
+.add_to_card {
+    display: block;
+    background-color: red;
+    text-decoration: none;
+    color: #fff;
+    width: 120px;
+    text-align: center;
+    height: 30px;
+    font-weight: bold;
+    margin: 20px 0px;
+    border-radius: 5px;
+}
+
+#button_minus,
+#num_count,
+#button_plus {
+    border: none;
+}
+.input-group {
+    display: inline-block;
+    border: 2px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px 0px;
+}
+
+#num_count {
+    text-align: center;
+}
+
+.sortMenu {
+    display: flex;
+}
+
+.container-fluid{
+	display:flex;
+	justify-content: center;
+}
+.navbar-dark{
+	background: rgba(11, 44, 82, 1);
+}
+.navbar-dark .navbar-nav .nav-link{
+	color:rgba(170, 207, 250, 1);;
+}
+.container1{
+	max-width: 100%;
+	padding:50px;
+	display: flex;
+	justify-content:flex-start;
+}
+
+
+.my-carousel{
+	padding: 0px;
+
+}
+.carousel-item{
+	
+	max-height: 650px;
+}
+
+.carouselExampleCaptions .carousel-item img {
+	object-fit: cover;
+}
+.container-main{
+	padding-bottom: 20px;
+}
+.content-main{
+	display: flex;
+	justify-content:center;
+	background-color:#FFF;
+	margin-left: 50px;
+	margin-right: 50px;
+	
+	padding: 50px;
+}
+
+.product-card {
+
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06);
+	transition: all .3s;
+}
+#basket {
+    display: table-cell;
+    height: 40px;
+    text-align: center;
+    width: 40px;
+    vertical-align: middle;
+}
+.product-card:hover {
+	box-shadow: 0 14px 30px -16px rgba(0,0,0,0.85);
+
+}
+.product-thumb a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 200px;
+	padding: 15px;
+}
+
+.product-thumb img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.product-details h4 a{
+	font-weight: 500;
+	display: flex;
+	height: 60px;
+	overflow: hidden;
+	text-decoration: none;
+	justify-content: center;
+}
+.product-details p {
+	font-size:15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	color:#999;
+	height: 60px;
+	overflow: hidden;
+
+}
+.product-bottom-details{
+	margin-left: 5px;
+	margin-right: 5px;
+	overflow: hidden;
+	border-top: 3px solid #0b2c52;
+	padding-top: 20px;
+}
+
+.product-price {
+	margin-left: 10px;
+	font-size: 18px;
+	color: #0062c4;
+	font-weight: 600;
+}
+
+
+.product-links a {
+	font-size:20px;
+	margin-left:10px;
+}
+
+.catalogList{
+	display:flex;
+	flex-wrap: wrap;
+}
+.mainBlockCatalog{
+	display: flex;
+
+}
+.link {
+    padding-right: 2%;
+    width: 25%;
+}
+.catalogList {
+    width: 80%;
+    display: flex;
+}
+.link li {
+    list-style-type: none;
+}
+
+
+
+#range1 {
+    height: 100%;
+    width: 100%;
+    min-height: 400px;
+}
+
+#range1 .login-wr {
+    position: relative;
+    margin: 0 auto;
+    max-width: 350px;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#range1 h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2em;
+    margin-top: 10px;
+    color: #000000;
+}
+
+#range1 .form {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.form_text {
+    text-align: left;
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+
+#range1 input[type="text"],
+#range1 input[type="password"],
+#range1 input[type="email"],
+#range1 input[type="file"],
+#range1 button {
+    width: 80%;
+    margin-bottom: 25px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+#range1 input[type="text"],
+#range1 input[type="password"] {
+    border: 1px solid #bbb;
+    padding: 0 0 0 10px;
+    font-size: 14px;
+}
+
+#range1 a {
+    text-align: center;
+    color: #rgb(38, 214, 245);
+}
+
+#range1 button {
+    background: rgb(38, 214, 245);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+
+#login table {
+    border: 4px double #333;
+    /* Рамка вокруг таблицы */
+    border-collapse: separate;
+    /* Способ отображения границы */
+    width: 100%;
+    /* Ширина таблицы */
+    border-spacing: 7px 11px;
+    /* Расстояние между ячейками */
+}
+
+
+
+#login td a {
+    color: white;
+}
+
+.exit {
+    text-align: center;
+    background: rgb(38, 214, 245);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+
+
+#openedProduct-img {
+    float: left;
+    width: 30%;
+    margin-right: 3%;
+}
+
+#openedProduct-img img {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgba(225, 225, 225, 0.7);
+}
+
+#openedProduct-content {
+    float: left;
+    width: 67%;
+}
+
+#openedProduct-name {
+    font-family: Exo, sans-serif;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+#openedProduct-desc {
+    margin-top: 20px;
+}
+
+#openedProduct-price {
+    margin-top: 10px;
+    color: #6a6747;
+    font-weight: bold;
+}
+
+.red{
+    color: red;
+}
+

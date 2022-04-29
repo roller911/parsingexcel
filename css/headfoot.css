@@ -1,0 +1,49 @@
+#header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.container-fluid{
+    display:flex;
+    justify-content: center;
+}
+.navbar-dark{
+    background: rgba(11, 44, 82, 1);
+}
+.navbar-dark .navbar-nav .nav-link{
+    color:rgba(170, 207, 250, 1);;
+}
+div#header, div#footer {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: cover;
+}
+.footer{
+    background-image: url( https://nntc.nnov.ru/sites/all/themes/nrtc2014_t/images/shapka-bg.jpg);
+    padding: 20px;
+    color: #0e0b0d;
+
+}
+.footer li a {
+    display: block;
+}
+
+.footer-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 20px;
+}
+.footer a:hover {
+    color: rgb(0,0,0);
+}
+.footer h4 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgba(0, 44, 82, 1);
+    border-bottom: 2px solid #0e0b0d;
+    padding-bottom: 5px;
+}
