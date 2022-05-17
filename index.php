@@ -5,8 +5,8 @@ session_start();
 
 
 <?php
-require_once 'PHPExcel.php';
-$excel = PHPExcel_IOFactory::load('test2.xlsx'); 
+require_once 'src\PHPExcel.php';
+$excel = PHPExcel_IOFactory::load('src/test/test2.xlsx'); 
 $str1 = $excel->getActiveSheet()->getCell('A1');
 echo $str1;
 ?>
