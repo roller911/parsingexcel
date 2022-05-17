@@ -7,7 +7,7 @@ $password='root';
 $db_name='seainfo';
 
 $link = mysqli_connect($host,$user,$password,$db_name);
-//$link = new mysqli($host,$user,$password,'any_database');
+
 
 
 if($link->connect_errno){
@@ -17,5 +17,5 @@ if($link->connect_errno){
 
 $link->set_charset('utf8');
 
-$sql = $link->query("SELECT * FROM `students`"); 
+$sql = $link->query("SELECT * FROM `students`");
 ?>

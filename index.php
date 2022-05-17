@@ -3,6 +3,14 @@ session_start();
   require ("templates/header.php");
 ?>
 
+
+<?php
+require_once 'PHPExcel.php';
+$excel = PHPExcel_IOFactory::load('test2.xlsx'); 
+$str1 = $excel->getActiveSheet()->getCell('A1');
+echo $str1;
+?>
+
 <?php
 
 require('connect.php');
@@ -25,7 +33,33 @@ $page=$_GET['page'];
     require('authorization/index.php');
   }else if($page == 'index'){
     require('templates/main.php');
-  } elseif($page=='index_profile'){
+  }else if($page == 'plans'){
+    require('templates/plans.php');
+  } else if($page == 'openstudents'){
+
+    $idg = $_GET['id'];
+
+    $good = [];
+
+    foreach ($sql as $product) {
+       if($product['id'] == $idg){
+         $good = $product;
+         break;
+       }
+     } 
+
+    require('templates/validstud.php');
+
+  }
+  else if($page == 'newstudents'){
+      require('templates/newstud.php');
+    }
+
+
+
+
+
+elseif($page=='index_profile'){
       if(isset($_SESSION['user'])){
           if($_SESSION['user']['role'] == '1'){
             require ('authorization/admin.php');
@@ -36,6 +70,8 @@ $page=$_GET['page'];
       }else{
         require('authorization/index.php');
       }
+  } elseif($page=='modalstud'){
+    require('templates/openstud.php');
   }    
   elseif($page=='register'){
     require('authorization/register.php');

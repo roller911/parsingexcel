@@ -1,9 +1,10 @@
 <body>
     <script src="scripts/load.js"></script>
-    <script src="node_modules/expess/index.js"></script>
- <h1>Upload file</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <label>Файл</label><br>
-        <input type="file" name="filedata" /><br><br>
-        <input type="submit" value="Send" />
+ <h1 >Выберите файл.</h1>
+    <form  class="was-validated" onload="updateSize();" method="post" enctype="multipart/form-data" name="uploadForm" >
+        <div class="mb-3">
+        <input class="form-control" aria-label="file example" required id="uploadInput" type="file" name="filename" onchange="updateSize();" multiple/>selected files: <span id="fileNum">0</span>; total size: <span id="fileSize">0</span><br><br>
+        <input  class="btn btn-primary" type="submit" name="submit" value="Выполнить" />
+    </div>
       </form>
+  
