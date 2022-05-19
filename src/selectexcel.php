@@ -17,6 +17,7 @@ $str2 = $excel->getActiveSheet()->getCell('K25');
 $str3 = $excel->getActiveSheet()->getCell('B31');
 $str4 = $excel->getActiveSheet()->getCell('K31');
 
+
 /*$foundInCells = array();
 $searchValue = 'ДЗ';
 foreach ($excel->getRowIterator() as $row) {
@@ -55,10 +56,10 @@ $objPHPExcel->getActiveSheet()->setTitle('План');
 
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
 $objPHPExcel->setActiveSheetIndex(0);
-/*header('application/vnd.oasis.opendocument.text');
-header('Content-Disposition: attachment;filename="tests.odt"');*/
-header('Content-Type: application/vnd.oasis.opendocument.spreadsheet');
-header('Content-Disposition: attachment;filename="test.ods"');
+header('application/vnd.oasis.opendocument.text');
+header('Content-Disposition: attachment;filename="tests.odt"');
+/*header('Content-Type: application/vnd.oasis.opendocument.spreadsheet');
+header('Content-Disposition: attachment;filename="test.ods"');*/
 header('Cache-Control: max-age=0');
 // If you're serving to IE 9, then the following may be needed
 header('Cache-Control: max-age=1');

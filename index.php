@@ -51,6 +51,10 @@ $page=$_GET['page'];
   else if($page == 'newstudents'){
       require('templates/newstud.php');
     }
+    else if($page == 'results'){
+      require('templates/results.php');
+    }
+
 
 
 

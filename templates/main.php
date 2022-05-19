@@ -7,4 +7,4 @@
         <input  class="btn btn-primary" type="submit" name="submit" value="Выполнить" />
     </div>
       </form>
-  <?php echo $_FILES['filename']['size']; ?>
+ 
