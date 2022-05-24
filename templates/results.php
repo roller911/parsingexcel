@@ -24,11 +24,11 @@
         <td>#</td>
         <td id=""><?php echo $good['surname'];?> <?php echo $good['name'];?> <?php echo $good['patronymic'];?></td>
 
-        <td><input type="text" name="result1[]" /></td>
-        <td><input type="text" name="result2[]"/></td>
-        <td><input type="text" name="result3[]"/></td>
-        <td><input type="text" name="result4[]"/></td>
-        <td><input type="text" name="srb"/></td>
+        <td><input type="text" name="result1" /></td>
+        <td><input type="text" name="result2"/></td>
+        <td><input type="text" name="result3"/></td>
+        <td><input type="text" name="result4"/></td>
+        <td></td>
         <td><input type="text" value="1" name="pruv"/></td>
         <td><input type="text" value="3" name="npruv"/></td>
         <td><?php 
@@ -130,7 +130,8 @@
     </tr>
 
 </table>
-<input  class="btn btn-primary" type="submit" name="submit_excel" value="Загурузить" />
+<button  class="btn btn-primary" type="submit" name="submit_excel">Загурузить </button>
+
  </form>   
 
    
