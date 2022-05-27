@@ -4,8 +4,9 @@ ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 date_default_timezone_set('Europe/London');
 
-
+require_once '../connect.php';
 require_once 'PHPExcel.php';
+
 
 
 $files = move_uploaded_file($_FILES['filename']['tmp_name'],'test/'.$_FILES['filename']['name'] );
@@ -13,24 +14,40 @@ $excel = PHPExcel_IOFactory::load('test/'.$_FILES['filename']['name']);
 /*echo 'test/'.$_FILES['filename']['name'];*/
 $list = $excel->setActiveSheetIndex(2);
 $cell2 = $list->getCellByColumnAndRow(11,31);
+$sql_obj ="SELECT * FROM object";
+$bd_obj = mysqli_query($link,$sql_obj);
+$row_obj = mysqli_fetch_array($bd_obj);
 
 $rows_count = $list->getHighestRow();
 $columns_count = $list->getHighestColumn();
+$str=$list->getStyle('U50')->getFill()->getEndColor()->getARGB();
+$str2=$list->getStyle('U40')->getFill()->getEndColor()->getARGB();
 
 $objPHPExcel = new PHPExcel();
 $objPHPExcel->getProperties()->setCreator("")
                              ->setLastModifiedBy("");
-           
-                            
+//echo($str);
+//echo($str2);    
+
 $j=1;
-for($row = 1; $row <= $rows_count; $row++){
-        $cell = $list->getCellByColumnAndRow(11,$row);
+for($row = 25; $row <= $rows_count; $row++){
+        $color_hours = $list->getStyleByColumnAndRow(32,$row)->getFill()->getEndColor()->getARGB();
+        $hours = $list->getCellByColumnAndRow(32,$row)->getValue();
+        $cell = $list->getCellByColumnAndRow(10,$row);
+        $object = $list->getCellByColumnAndRow(1,$row);
+if($color_hours = 'FF000000' && $hours > 0){
         if($cell=="ДЗ" || $cell=="З"||$cell=="Э"){
-            $object = $list->getCellByColumnAndRow(1,$row);
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A'.$j, $object);
-         $j++;
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A'.$j, $object)->setCellValue('B'.$j, $cell);
+        $j++; 
+        }
+ 
+if($object != $row_obj['name']){
+            $insert_obj = "INSERT INTO `object` (`id`,`name`) VALUES ('$k','$object')";
+            $query = $link->query($insert_obj);
+            $k++;
         }
     }
+}
     //$str3 = $list->getCell('B27');
   //$objPHPExcel->setActiveSheetIndex(0)->setCellValue('B2',$str);
         

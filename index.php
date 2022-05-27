@@ -3,11 +3,6 @@ session_start();
   require ("templates/header.php");
 ?>
 
-
-<?php
-
-?>
-
 <?php
 
 require('connect.php');
@@ -15,9 +10,15 @@ require('connect.php');
 if (!isset($_SESSION['sql'])){
   $_SESSION['sql'] = "SELECT * FROM students";
 }
-
 $sql_text = $_SESSION['sql'];
 $sql = $link->query($sql_text);
+
+
+if (!isset($_SESSION['obj_sql'])){
+  $_SESSION['obj_sql'] = "SELECT * FROM object";
+}
+$sql_obj = $_SESSION['obj_sql'];
+$obj = $link->query($sql_obj);
 
 $page=$_GET['page'];
   if(!isset($page)){

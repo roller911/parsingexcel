@@ -18,4 +18,5 @@ if($link->connect_errno){
 $link->set_charset('utf8');
 
 $sql = $link->query("SELECT * FROM `students`");
+$obj_sql=$link->query("SELECT * FROM `object`");
 ?>

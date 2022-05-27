@@ -26,9 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php?page=index">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?page=plans">Учебный план</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?page=shop">Дисциплины</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php?page=index">Учебный план</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?page=results">Успеваемость</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?page=profile">Кл.руководители</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?page=students">Студенты</a></li>
