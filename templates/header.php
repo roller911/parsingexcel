@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    
     <link rel="icon" href="" type="image/x-icon">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
@@ -10,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/headfoot.css">
     <script src="scripts/calculat.js"></script>
+    
   
     <title>diplom 
     </title>
 </head>
+
 <body>
 <header>
     <div id="headerInside">

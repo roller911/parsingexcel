@@ -37,7 +37,10 @@ if (!empty($_SESSION['teachers'])):
         <td rowspan="2">№п/п
 </td>
         <td rowspan="2">Фио</td>
-        <td colspan="4">Наименование дисциплины</td>
+        <?php foreach ($obj as $good):
+        
+echo "<td colspan={$i}>Наименование дисциплины</td>";
+endforeach;?>
         <td rowspan="2">Средний балл</td>
         <td colspan="3">Пропуски занятий</td>
     </tr>
@@ -46,9 +49,9 @@ if (!empty($_SESSION['teachers'])):
     <tr>
         <?php
       foreach ($obj as $good):
-      ?>
-        <td><?php echo $good['name'];?></td>
-        <?php endforeach;?>
+      
+        echo "<td class='mark'>{$good['name']}</td>";
+        endforeach;?>
         <td>Уважительные</td>
         <td>Неуважительные</td>
         <td>Всего</td>
@@ -56,26 +59,31 @@ if (!empty($_SESSION['teachers'])):
      
 
      <?php
+     $c=0;
       foreach ($sql as $good):
-      ?>
-    <tr>
+      
+    echo "<tr>
         <td>#</td>
-        <td id=""><?php echo $good['surname'];?> <?php echo $good['name'];?> <?php echo $good['patronymic'];?></td>
+        <td class='student'>{$good['surname']} {$good['name']} {$good['patronymic']}</td>";
 
-    <?php
+    
+    $i=0;
       foreach ($obj as $good):
-      ?>
+    
 
 
-      <td><input type="text" size="1" id=""></td>
-      <?php endforeach;?>
+     echo" <td><input type='text' size='1' id=r{$c}c{$i} oninput='srzn()'value=0></td>";
+     $i++;
+       endforeach;
 
-        <td></td>
-        <td><input type="text" size="1" id="pr1"></td>
-        <td><input type="text" size="1" id="pr2"></td>
-        <td ><p id="pr_result"></td>
-    </tr>
-    <?php endforeach;?>
+       echo "<td><input type='text' id='sr{$c}'></td>
+        <td><input type='text' size='1' id='pr1'></td>
+        <td><input type='text' size='1' id='pr2'></td>
+        <td ><p id='pr_result'></td>
+    </tr>";
+    $c++;
+    endforeach;?>
+
 
 
 

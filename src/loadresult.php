@@ -7,9 +7,6 @@ date_default_timezone_set('Europe/London');
 require_once 'PHPExcel.php';
 require_once '../connect.php';
 
-
-
-
 if(isset($_POST['submit_excel'])){
 	$sql1 = "SELECT * FROM students ORDER BY surname DESC";
 	$sql2="SELECT * FROM object ORDER BY name DESC";

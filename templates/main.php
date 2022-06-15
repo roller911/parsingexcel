@@ -6,7 +6,7 @@ if (!empty($_SESSION['teachers'])):
 
 ?>
 <body>
-    <div class="container">
+  
     <script src="scripts/load.js"></script>
  <h1 >Выберите файл.</h1>
     <form  class="was-validated" onload="updateSize();" method="post" enctype="multipart/form-data" name="uploadForm" action="src/selectexcel.php">
@@ -38,7 +38,7 @@ if (!empty($_SESSION['teachers'])):
         <input  class="btn btn-primary" type="submit" name="submit" value="Выполнить" />
     </div>
       </form>
-</div>
+
 <?php else: ?>
     <p>пожалуйста, авторизуйтесь</p>
 <?php endif; ?>
