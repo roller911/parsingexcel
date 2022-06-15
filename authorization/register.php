@@ -22,11 +22,11 @@
                                 <div class="form_text">
                                     Имя
                                 </div>
-                                <input type="text" name="full_name" placeholder="Введите свое полное имя">
+                                <input type="text" name="name" placeholder="Введите свое полное имя">
                                 <div class="form_text">
                                     Отчество
                                 </div>
-                                <input type="text" name="full_name" placeholder="Введите свое отчество">
+                                <input type="text" name="patronymic" placeholder="Введите свое отчество">
                                 <div class="form_text">
                                     Логин
                                 </div>
@@ -37,11 +37,7 @@
                                 </div>
                                 <input type="email" name="email" placeholder="Введите адрес своей почты">
                                    <!-- <div style="color:red;"> <?= $_SESSION['error_email'] ?></div>-->
-                                   <div class="form_text">
-                                    Телефон
-                                </div>
-                                <input type="text" name="full_name" placeholder="Введите свой номер телефона">
-                                <div class="form_text">
+                                                                   <div class="form_text">
                                     Пароль
                                 </div>
                                 <input type="password" name="password" placeholder="Введите пароль">

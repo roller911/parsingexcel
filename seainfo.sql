@@ -1,139 +1,190 @@
--- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1    Database: mydb
--- ------------------------------------------------------
--- Server version	8.0.22
+-- Хост: 127.0.0.1:3306
+-- Время создания: Июн 14 2022 г., 10:09
+-- Версия сервера: 8.0.19
+-- Версия PHP: 7.1.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `groups`
+-- База данных: `seainfo`
 --
 
-DROP TABLE IF EXISTS `groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `groups` (
-  `idGroups` int NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `course` int NOT NULL,
-  `Speciality_idSpeciality` int NOT NULL,
-  `Teachers_idTeachers` int NOT NULL,
-  PRIMARY KEY (`idGroups`),
-  KEY `fk_Groups_Speciality1_idx` (`Speciality_idSpeciality`),
-  KEY `fk_Groups_Teachers1_idx` (`Teachers_idTeachers`),
-  CONSTRAINT `fk_Groups_Speciality1` FOREIGN KEY (`Speciality_idSpeciality`) REFERENCES `speciality` (`idSpeciality`),
-  CONSTRAINT `fk_Groups_Teachers1` FOREIGN KEY (`Teachers_idTeachers`) REFERENCES `teachers` (`idTeachers`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `groups`
+-- Структура таблицы `group`
 --
 
-LOCK TABLES `groups` WRITE;
-/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `group` (
+  `id` int NOT NULL,
+  `name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `speciality`
+-- Дамп данных таблицы `group`
 --
 
-DROP TABLE IF EXISTS `speciality`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `speciality` (
-  `idSpeciality` int NOT NULL,
-  `name` varchar(45) NOT NULL,
-  PRIMARY KEY (`idSpeciality`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+INSERT INTO `group` (`id`, `name`) VALUES
+(1, '4-ИСиП-18-1'),
+(2, '4-ИСиП-18-2'),
+(3, '4-ИСиП-18-3');
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `speciality`
+-- Структура таблицы `object`
 --
 
-LOCK TABLES `speciality` WRITE;
-/*!40000 ALTER TABLE `speciality` DISABLE KEYS */;
-/*!40000 ALTER TABLE `speciality` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `object` (
+  `id` int NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `semestr` int NOT NULL,
+  `id_group` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `students`
+-- Дамп данных таблицы `object`
 --
 
-DROP TABLE IF EXISTS `students`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+INSERT INTO `object` (`id`, `name`, `semestr`, `id_group`) VALUES
+(1, 'Русский язык', 1, 1),
+(2, 'Иностранный язык', 1, 1),
+(3, 'Математика', 1, 1),
+(4, 'История', 1, 1),
+(5, 'Физическая культура', 1, 1),
+(6, 'Основы безопасности жизхнедеятельности', 1, 1),
+(7, 'Информатика', 1, 1),
+(8, 'Физика', 1, 1),
+(9, 'Химия', 1, 1),
+(10, 'Обществознание (включая экономику и право)', 1, 1),
+(11, 'Биология', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `students`
+--
+
 CREATE TABLE `students` (
-  `idStudents` int NOT NULL,
-  `surname` varchar(45) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `patronymic` varchar(45) NOT NULL,
-  `status` varchar(45) DEFAULT NULL,
-  `Groups_idGroups` int NOT NULL,
-  PRIMARY KEY (`idStudents`),
-  KEY `fk_Students_Groups_idx` (`Groups_idGroups`),
-  CONSTRAINT `fk_Students_Groups` FOREIGN KEY (`Groups_idGroups`) REFERENCES `groups` (`idGroups`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id` int NOT NULL,
+  `surname` varchar(30) NOT NULL,
+  `name` varchar(15) NOT NULL,
+  `patronymic` varchar(25) NOT NULL,
+  `status` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `students`
+-- Дамп данных таблицы `students`
 --
 
-LOCK TABLES `students` WRITE;
-/*!40000 ALTER TABLE `students` DISABLE KEYS */;
-/*!40000 ALTER TABLE `students` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `students` (`id`, `surname`, `name`, `patronymic`, `status`) VALUES
+(1, 'Петров', 'Иван', 'Алексеевич', 0),
+(2, 'Иванов', 'Иван', 'Алексеевич', 1);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `teachers`
+-- Структура таблицы `teachers`
 --
 
-DROP TABLE IF EXISTS `teachers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `teachers` (
-  `idTeachers` int NOT NULL,
-  `login` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `role` varchar(45) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `surname` varchar(45) NOT NULL,
-  `patronymic` varchar(45) NOT NULL,
-  `phone` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idTeachers`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id` int NOT NULL,
+  `full_name` varchar(355) NOT NULL,
+  `login` varchar(100) NOT NULL,
+  `email` varchar(300) NOT NULL,
+  `password` varchar(300) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `patronymic` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `teachers`
+-- Дамп данных таблицы `teachers`
 --
 
-LOCK TABLES `teachers` WRITE;
-/*!40000 ALTER TABLE `teachers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `teachers` (`id`, `full_name`, `login`, `email`, `password`, `name`, `patronymic`) VALUES
+(1, 'admin', 'admin', 'admin@mail.ru', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin'),
+(2, '1', '1', '1@mai.ri', 'c4ca4238a0b923820dcc509a6f75849b', '1', '1');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `group`
+--
+ALTER TABLE `group`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `object`
+--
+ALTER TABLE `object`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_group` (`id_group`) USING BTREE;
+
+--
+-- Индексы таблицы `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `teachers`
+--
+ALTER TABLE `teachers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `group`
+--
+ALTER TABLE `group`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `object`
+--
+ALTER TABLE `object`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT для таблицы `students`
+--
+ALTER TABLE `students`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `teachers`
+--
+ALTER TABLE `teachers`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `object`
+--
+ALTER TABLE `object`
+  ADD CONSTRAINT `object_ibfk_1` FOREIGN KEY (`id_group`) REFERENCES `group` (`id`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-04-13 21:02:03

@@ -4,7 +4,9 @@
     require_once '../../connect.php';
 
 
-    $surname = $_POST['surname'];
+    $full_name = $_POST['full_name'];
+    $name = $_POST['name'];
+    $patronymic = $_POST['patronymic'];
     $login = $_POST['login'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -25,14 +27,14 @@
 
         $password = md5($password);
 
-        if (mysqli_query($link, "INSERT INTO `teachers`  VALUES (NULL, '$surname', '$login', '$email', '$password','0')")){
+        if (mysqli_query($link, "INSERT INTO `teachers`  VALUES (NULL, '$full_name', '$login','$email','$password','$name','$patronymic')")){
             echo "успешно";
         }else{
             echo "не вошел";
         }
 
         $_SESSION['message'] = 'Регистрация прошла успешно!';
-        header('Location: ../../index.php?page=index_profile');
+        header('Location: ../../"index.php?page=index_profile"');
 
 
     } else {

@@ -9,6 +9,7 @@
     <script src="scripts/modalst.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/headfoot.css">
+    <script src="scripts/calculat.js"></script>
   
     <title>diplom 
     </title>
@@ -28,7 +29,6 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
             <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php?page=index">Учебный план</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?page=results">Успеваемость</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?page=profile">Кл.руководители</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?page=students">Студенты</a></li>
            
         </ul>
@@ -36,13 +36,7 @@
 
              <a class="nav-link" href="index.php?page=index_profile"> <img id="basket"  src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/32/000000/external-user-interface-kiranshastry-gradient-kiranshastry-1.png" alt="">
             </a>
-        <form method="POST">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <a class="nav-link" href="#openModal" ><img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/40/000000/external-search-medical-kiranshastry-gradient-kiranshastry.png"/></a>
-          </ul>
-        </form>
+     <a class="nav-link" href="authorization/handler_form/logout.php"> <img src="https://img.icons8.com/external-sbts2018-blue-sbts2018/32/undefined/external-logout-social-media-basic-1-sbts2018-blue-sbts2018.png"/></a>
           <div id=navnavWrap>
          
             </a>

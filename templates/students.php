@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (!empty($_SESSION['teachers'])):
+   
+
+?>
 <section class="main-content">
         <div class="container">
        <a href="index.php?page=newstudents">Добавить студента</a>
@@ -11,3 +18,6 @@
 </div>     
 
 </section>
+<?php else: ?>
+    <p>пожалуйста, авторизуйтесь</p>
+<?php endif; ?>

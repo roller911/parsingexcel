@@ -18,7 +18,7 @@ if(isset($_POST['submit_excel'])){
 	
 $objPHPExcel = new PHPExcel();
 $objPHPExcel->getProperties()->setCreator("")
-							 ->setLastModifiedBy("");
+ ->setLastModifiedBy("");
 $objPHPExcel->getActiveSheet()->setTitle('Успевамость');
 
 	if(mysqli_num_rows($resultsql)>0) {
@@ -29,7 +29,7 @@ $objPHPExcel->getActiveSheet()->setTitle('Успевамость');
 			->setCellValue('A'.$i, $row["surname"]);
 			$i++;
 		}
-	if(mysqli_num_fields($result_obj>0){
+	if(mysqli_num_fields($result_obj)>0){
 				  $j=2;
 		while($column = mysqli_fetch_array($result_obj)){
 			$objPHPExcel->setActiveSheetIndex(0)
@@ -52,38 +52,6 @@ $objWriter->save('php://output');
 
 	}
 }
-exit;
 
-/*$result1 = htmlspecialchars($_POST['result1'][0]);
-$result2 = htmlspecialchars($_POST['result2'][0]);
-$str = "ddd";
-
-$objPHPExcel = new PHPExcel();
-
-
-$objPHPExcel->getProperties()->setCreator("")
-							 ->setLastModifiedBy("");
-
-
-							 $objPHPExcel->getActiveSheet()->setTitle('Успевамость');
-
-
-// Set active sheet index to the first sheet, so Excel opens this as the first sheet
-$objPHPExcel->setActiveSheetIndex(0);
-/*header('application/vnd.oasis.opendocument.text');
-header('Content-Disposition: attachment;filename="tests.odt"');*/
-/*header('Content-Type: application/vnd.oasis.opendocument.spreadsheet');
-header('Content-Disposition: attachment;filename="result.ods"');
-header('Cache-Control: max-age=0');
-// If you're serving to IE 9, then the following may be needed
-header('Cache-Control: max-age=1');
-
-// If you're serving to IE over SSL, then the following may be needed
-header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
-header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
-header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
-header ('Pragma: public'); // HTTP/1.0
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'OpenDocument');
-$objWriter->save('php://output');
 exit;
 ?>

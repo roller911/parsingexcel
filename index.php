@@ -20,6 +20,7 @@ if (!isset($_SESSION['obj_sql'])){
 $sql_obj = $_SESSION['obj_sql'];
 $obj = $link->query($sql_obj);
 
+
 $page=$_GET['page'];
   if(!isset($page)){
     require('templates/main.php');
@@ -53,6 +54,17 @@ $page=$_GET['page'];
       require('templates/newstud.php');
     }
     else if($page == 'results'){
+
+$idr = $_GET['id_r'];
+if($idg == 0){
+      $_SESSION['obj_sql'] = "SELECT * FROM object WHERE semestr = 1 AND id_group=1";
+    }
+    else{
+      $_SESSION['obj_sql'] = "SELECT * FROM product WHERE semestr = $idg";
+    }
+   $sql_obj = $_SESSION['obj_sql'];
+$obj = $link->query($sql_obj);
+
       require('templates/results.php');
     }
 
@@ -63,17 +75,10 @@ $page=$_GET['page'];
 
 elseif($page=='index_profile'){
       if(isset($_SESSION['user'])){
-          if($_SESSION['user']['role'] == '1'){
-            require ('authorization/admin.php');
-
-          }elseif($_SESSION['user']['role'] == '0'){
-            require('authorization/profile.php');
-          }
+        
       }else{
         require('authorization/index.php');
       }
-  } elseif($page=='modalstud'){
-    require('templates/openstud.php');
   }    
   elseif($page=='register'){
     require('authorization/register.php');
