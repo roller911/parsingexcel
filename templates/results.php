@@ -70,93 +70,92 @@ endforeach;?>
     $i=0;
       foreach ($obj as $good):
     
-
-
      echo" <td><input type='text' size='1' id=r{$c}c{$i} oninput='srzn()'value=0></td>";
      $i++;
+       
+
        endforeach;
 
-       echo "<td><input type='text' id='sr{$c}'></td>
+       echo "<td><input type='text' size='1' id='sr{$c}'></td>
         <td><input type='text' size='1' id='pr1'></td>
         <td><input type='text' size='1' id='pr2'></td>
         <td ><p id='pr_result'></td>
     </tr>";
     $c++;
-    endforeach;?>
-
-
-
-
-
-
-<tr>
-        <td colspan="2">Реализ. станд.по дисциплине</td>
-       <?php
-      foreach ($obj as $good):
-      ?>
-      <td></td>
-      <?php endforeach;?>
-    </tr>
+    endforeach;
+    $k1=0;
+    
+echo "<tr>
+        <td colspan='2'>Реализ. станд.по дисциплине</td>";
+foreach ($obj as $good):
+echo "<td><input type='text' id=real{$k1} size='1'> </td>";
+$k1++;
+endforeach;
+echo "</tr>
     <tr>
-        <td colspan="2">Качество знаний по
-дисциплине </td>
-       <?php
-      foreach ($obj as $good):
-      ?>
-      <td></td>
-      <?php endforeach;?>
-    </tr>
+        <td colspan='2'>Качество знаний по
+дисциплине </td>";
+$k2=0;
+foreach ($obj as $good):
+echo "<td><input type='text' id=kach{$k2} size='1'> </td>";
+$k2++;
+endforeach;
+echo "</tr>
     <tr>
-        <td colspan="2">Кол-во «5» по пред-ту </td>
-        <?php
-      foreach ($obj as $good):
-      ?>
-      <td></td>
-      <?php endforeach;?>
+        <td colspan='2'>Кол-во «5» по пред-ту </td>";
 
-    </tr>
+$m5=0;
+foreach ($obj as $good):
+echo "<td><input type='text' id=kol5{$m5} size='1'> </td>";
+$m5++;
+endforeach;
+echo "</tr>
 
     <tr>
-        <td colspan="2">Кол-во «4» по пред-ту</td>
-       <?php
-      foreach ($obj as $good):
-      ?>
-      <td></td>
-      <?php endforeach;?>
+        <td colspan='2'>Кол-во «4» по пред-ту</td>";
+$m4=0;
+foreach ($obj as $good):
+echo "<td><input type='text' id=kol4{$m4} size='1'> </td>";
+$m4++;
+endforeach;
+ echo "</tr>
+    <tr>
+        <td colspan='2'>Кол-во «3» по пред-ту </td>";
+$m3=0;
+foreach ($obj as $good):
+echo "<td><input type='text' id=kol3{$m3} size='1'> </td>";
+$m3++;
+endforeach;
+echo "</tr> <tr>
+        <td colspan='2'>Кол-во «2» по пред-ту</td>";
+$m2=0;
+foreach ($obj as $good):
+echo "<td><input type='text' id=kol2{$m2} size='1'> </td>";
+$m2++;
+endforeach;
+echo "</tr> <tr>
+        <td colspan='2'>Средний бал по пред-ту</td>";
+        $r=0;
+foreach ($obj as $good):
+echo "<td><input type='text' id='srp{$r}'' size='1'> </td>";
+$r++;
+endforeach;
+echo "</tr>
+    <tr>
+        <td colspan='2'>Реал. станд.по группе</td>
+        <td><input type='text' size='1' id='realgr'/></td>
     </tr>
     <tr>
-        <td colspan="2">Кол-во «3» по пред-ту </td>
-      
-    </tr>
-    <tr>
-        <td colspan="2">Кол-во «2» по пред-ту</td>
-      <?php
-      foreach ($obj as $good):
-      ?>
-      <td></td>
-      <?php endforeach;?>
-    </tr>
-    <tr>
-        <td colspan="2">Средний бал по пред-ту</td>
-        <?php
-      foreach ($obj as $good):
-      ?>
-      <td></td>
-      <?php endforeach;?>
-    </tr>
-    <tr>
-        <td colspan="2">Реал. станд.по группе</td>
-        <td colspan="8"></td>
-    </tr>
-    <tr>
-        <td colspan="2">Качество знаний по гр
+        <td colspan='2'>Качество знаний по гр
 </td>
-        <td colspan="8"></td>
+        <td><input type='text' size='1' id='kachggr'/></td>
     </tr>
     <tr>
-        <td colspan="2">Средний балл по группе</td>
-        <td colspan="8"><input type="text" id=""/></td>
-    </tr>
+        <td colspan='2'>Средний балл по группе</td>
+        <td><input type='text' size='1' id='srzngr'/></td>
+    </tr>";
+    ?>
+
 
 </table>
 

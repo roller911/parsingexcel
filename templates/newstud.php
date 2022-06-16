@@ -1,11 +1,4 @@
 
-<?php
-require '../connect.php';
-
-$
-?>
-
-
 <section class="content-main">
 <div class="container-main">
 <form class="row g-4 needs-validation" novalidate action="" method="post">

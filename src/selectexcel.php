@@ -51,6 +51,18 @@ $selectsem = $_POST['selectsem'];
        case '4':
             $s = 13;
       break;
+      case '5':
+            $s=14;
+      break;
+        case '6':
+            $s=15;
+      break;
+      case '7':
+            $s=16;
+      break;
+      case '8':
+            $s=17;
+      break;
     }
 }
 
@@ -71,7 +83,7 @@ if($color_hours == 'FF000000' && $hours > 0){
         }
  
 if($object != $row_obj['name']){
-            $insert_obj = "INSERT INTO `object` (`id`,`name`,`semestr`,`id_group`) VALUES ('$k','$object','1','1')";
+            $insert_obj = "INSERT INTO `object` (`id`,`name`,`semestr`,`id_group`) VALUES ('$k','$object','$s','1')";
             $query = $link->query($insert_obj);
             $k++;
             }
