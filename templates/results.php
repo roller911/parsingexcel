@@ -148,7 +148,7 @@ echo "</tr>
     <tr>
         <td colspan='2'>Качество знаний по гр
 </td>
-        <td><input type='text' size='1' id='kachggr'/></td>
+        <td><input type='text' size='1' id='kachgr'/></td>
     </tr>
     <tr>
         <td colspan='2'>Средний балл по группе</td>

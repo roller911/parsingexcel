@@ -16,6 +16,9 @@ log.textContent = e.target.value;
  var myl = elems.length;
  var stl = student.length;
   sum = 0;
+  sum2=0;
+  sum1=0;
+  sum3=0;
   for(i=0;i<student.length;i++){
     for(j=0; j<elems.length;j++){
     sum+= parseInt(document.getElementById('r'+i+'c'+j).value);
@@ -23,9 +26,11 @@ log.textContent = e.target.value;
       }
       document.getElementById('sr'+i).value= sum / myl;
       sum=0;
-
+      
+      sum3+=parseInt(document.getElementById('sr'+i).value);
+      document.getElementById('srzngr').value=sum3/stl;
   }
-  sum1=0;
+
   count=0;
   count5=0;
   count4=0;
@@ -66,9 +71,12 @@ count2++;
       count2=0;
       count=0;
 
-      sum1+=document.getElementById('real'+j).value;
+      sum1+=parseInt(document.getElementById('real'+j).value);
+      document.getElementById('realgr').value=sum1/stl+'%';
+      sum2+=parseInt(document.getElementById('kach'+j).value);
+      document.getElementById('kachgr').value=sum2/stl+'%';
   }
 
-  document.getElementById('realgr').value=sum1/stl
+  
 
 }
