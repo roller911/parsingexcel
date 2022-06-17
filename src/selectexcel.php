@@ -15,6 +15,9 @@ $excel = PHPExcel_IOFactory::load('test/'.$_FILES['filename']['name']);
 /*echo 'test/'.$_FILES['filename']['name'];*/
 $list = $excel->setActiveSheetIndex(2);
 $cell2 = $list->getCellByColumnAndRow(11,31);
+
+
+
 $sql_obj ="SELECT * FROM object";
 $bd_obj = mysqli_query($link,$sql_obj);
 $row_obj = mysqli_fetch_array($bd_obj);
@@ -23,6 +26,8 @@ $rows_count = $list->getHighestRow();
 $columns_count = $list->getHighestColumn();
 $str=$list->getStyle('U50')->getFill()->getEndColor()->getARGB();
 $str2=$list->getStyle('U40')->getFill()->getEndColor()->getARGB();
+
+
 
 /*$objPHPExcel = new PHPExcel();
 $objPHPExcel->getProperties()->setCreator("")
@@ -41,27 +46,35 @@ $selectsem = $_POST['selectsem'];
       switch ($selectsem) {
        case '1':
             $s = 10;
+            $h = 32;
             break;
         case '2':
            $s = 11;
+           $h = 37;
             break;
       case '3':
             $s = 12;
+            $h = 42;
       break;
        case '4':
             $s = 13;
+            $h = 47;
       break;
       case '5':
             $s=14;
+            $h = 52;
       break;
         case '6':
             $s=15;
+            $h = 57;
       break;
       case '7':
             $s=16;
+            $h = 62;
       break;
       case '8':
             $s=17;
+            $h = 67;
       break;
     }
 }
@@ -72,8 +85,14 @@ $selectsem = $_POST['selectsem'];
 
 for($row = 25; $row <= $rows_count; $row++){
         $color_hours = $list->getStyleByColumnAndRow(32,$row)->getFill()->getEndColor()->getARGB();
-        $hours = $list->getCellByColumnAndRow(32,$row)->getValue();
+        $hours = $list->getCellByColumnAndRow($h,$row)->getValue();
         $cell = $list->getCellByColumnAndRow($s,$row);
+        foreach ($list->getMergeCells() as $merge) {
+          if($cell->isInRange($merge)){
+            
+            continue;
+          } 
+        }
         $object = $list->getCellByColumnAndRow(1,$row);
 if($color_hours == 'FF000000' && $hours > 0){
         if($cell=="ДЗ" || $cell=="З"||$cell=="Э"){
@@ -82,8 +101,8 @@ if($color_hours == 'FF000000' && $hours > 0){
         $j++; 
         }
  
-if($object != $row_obj['name']){
-            $insert_obj = "INSERT INTO `object` (`id`,`name`,`semestr`,`id_group`) VALUES ('$k','$object','$s','1')";
+if($row_obj['name'] !=  $object   && $row_obj['semestr'] != $selectsem){
+            $insert_obj = "INSERT INTO `object` (`id`,`name`,`semestr`,`id_group`) VALUES (NULL,'$object','$selectsem','1')";
             $query = $link->query($insert_obj);
             $k++;
             }

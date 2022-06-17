@@ -32,8 +32,8 @@ if (!empty($_SESSION['teachers'])):
 </br>
 
 <form method="post" name="loadform" action="src/loadresult.php">
-<table class="table table-bordered table-sm">
-    <tr>
+<table class="table table-hover table-bordered table-sm">
+    <tr class="table-secondary">
         <td rowspan="2">№п/п
 </td>
         <td rowspan="2">Фио</td>
@@ -70,16 +70,16 @@ endforeach;?>
     $i=0;
       foreach ($obj as $good):
     
-     echo" <td><input type='text' size='1' id=r{$c}c{$i} oninput='srzn()'value=0></td>";
+     echo" <td><input type='text' size='1' id=r{$c}c{$i} oninput='srzn()' value=0></td>";
      $i++;
        
 
        endforeach;
 
-       echo "<td><input type='text' size='1' id='sr{$c}'></td>
-        <td><input type='text' size='1' id='pr1'></td>
-        <td><input type='text' size='1' id='pr2'></td>
-        <td ><p id='pr_result'></td>
+       echo "<td><input type='text' size='1' oninput='propusk()' id='sr{$c}'></td>
+        <td><input type='text' size='1' oninput='propusk()' value='0' id='yvpr{$c}'></td>
+        <td><input type='text' size='1' oninput='propusk()' id='neyvpr{$c}' value='0'></td>
+        <td ><input type='text' size='1' id='pr_result{$c}'></td>
     </tr>";
     $c++;
     endforeach;
@@ -99,8 +99,14 @@ $k2=0;
 foreach ($obj as $good):
 echo "<td><input type='text' id=kach{$k2} size='1'> </td>";
 $k2++;
-endforeach;
-echo "</tr>
+endforeach; 
+
+echo " 
+<td></td>
+<td><input size='1' id='pr_yv'></td>
+<td><input size='1' id='pr_neyv'></td>
+<td><input size='1' id='vsego'></td>
+</tr>
     <tr>
         <td colspan='2'>Кол-во «5» по пред-ту </td>";
 
