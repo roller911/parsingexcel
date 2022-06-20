@@ -20,7 +20,7 @@
             "email" => $user['email'],
             "role"=>$user['role']
         ];
-        header('Location: ../../index.php?page=students');
+        header('Location: ../../index.php?page=index');
     }else {
         $_SESSION['message'] = 'Не верный логин или пароль';
         header('Location: ../../index.php?page=index_profile');

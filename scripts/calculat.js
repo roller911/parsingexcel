@@ -48,7 +48,7 @@ count2++;
 }
 }
       }
-      document.getElementById('srp'+j).value= (sum / stl).toFixed(1);
+      document.getElementById('srp'+j).value=(sum / stl).toFixed(1);
       document.getElementById('kol5'+j).value= count5;
       document.getElementById('kol4'+j).value= count4;
       document.getElementById('kol3'+j).value= count3;

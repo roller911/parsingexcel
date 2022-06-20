@@ -1,5 +1,4 @@
 <?php 
-
 //$host='localhost';
 $host='127.0.0.1:3306';
 $user='root';
@@ -7,8 +6,6 @@ $password='root';
 $db_name='seainfo';
 
 $link = mysqli_connect($host,$user,$password,$db_name);
-
-
 
 if($link->connect_errno){
 	exit ('Ошибка подключения к БД' .$link->connect_error);

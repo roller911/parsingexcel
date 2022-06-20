@@ -4,10 +4,7 @@ session_start();
 if ($_SESSION['teachers']) {
    
 }
-
-
 ?>
-
 <!doctype html>
 <html lang="ru">
 
@@ -55,5 +52,4 @@ if ($_SESSION['teachers']) {
         </div>
     </form>
 </body>
-
 </html>

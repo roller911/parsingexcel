@@ -33,7 +33,7 @@ if (!empty($_SESSION['teachers'])):
 
 <form method="post" name="loadform" action="src/loadresult.php">
 <table class="table table-hover table-bordered table-sm">
-    <tr class="table-secondary">
+    <tr>
         <td rowspan="2">№п/п
 </td>
         <td rowspan="2">Фио</td>
@@ -70,7 +70,7 @@ endforeach;?>
     $i=0;
       foreach ($obj as $good):
     
-     echo" <td><input type='text' size='1' id=r{$c}c{$i} oninput='srzn()' value=0></td>";
+     echo" <td><input type='text' size='1' name='r{$c}c{$i}' id=r{$c}c{$i} oninput='srzn()' value=0></td>";
      $i++;
        
 
@@ -149,23 +149,22 @@ endforeach;
 echo "</tr>
     <tr>
         <td colspan='2'>Реал. станд.по группе</td>
-        <td><input type='text' size='1' id='realgr'/></td>
+        <td><input type='text' size='1' name='realgr' id='realgr'/></td>
     </tr>
     <tr>
         <td colspan='2'>Качество знаний по гр
-</td>
-        <td><input type='text' size='1' id='kachgr'/></td>
+</td> 
+        <td><input type='text' size='1' name='kachgr' id='kachgr'/></td>
     </tr>
     <tr>
         <td colspan='2'>Средний балл по группе</td>
-        <td><input type='text' size='1' id='srzngr'/></td>
+        <td><input type='text' size='1' name='srzngr' id='srzngr' value=''/></td>
     </tr>";
     ?>
 
 
 </table>
-
-<button  class="btn btn-primary" type="submit" name="submit_excel">Загурузить </button>
+<button  class="btn btn-primary" type="submit" name="submit_excel"> Загурузить </button>
 
 
 
